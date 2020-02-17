@@ -1,0 +1,40 @@
+.donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.donor > .blood {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.donor > .blood::before {
+    content: '';
+    background-color: var(--color-primary-light);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: rotate(-45deg);
+}
+
+.donor p {
+    margin-top: 24px;
+    font-size: var(--font-size-small-medium);
+}
+
+@media (max-width: 954px) {
+  .donors {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .donor {
+      margin-bottom: var(--spacing-small);
+  }
+}

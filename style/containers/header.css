@@ -1,0 +1,32 @@
+header {
+    text-align: center;
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-medium);
+}
+
+header .logo {
+    width: 150px;
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+header h1 {
+    margin-bottom: var(--spacing-medium);
+}
+
+header p {
+    font-size: var(--font-size-small-medium);
+}
+
+header button {
+    padding: var(--spacing-smaller) var(--spacing-small);
+    margin-top: var(--spacing-smaller);
+}
+
+@media (max-width: 954px) {
+    header {
+        margin: 0 auto var(--spacing-medium);
+        width: 90%;
+    }
+}

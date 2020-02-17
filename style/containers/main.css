@@ -1,0 +1,22 @@
+main {
+  text-align: center;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto var(--spacing-medium);
+}
+
+main h2 {
+  margin-bottom: var(--spacing-medium);
+}
+
+main h2 span {
+  color: var(--color-primary);
+}
+
+@media (max-width: 954px) {
+  main {
+    margin: 0 auto var(--spacing-medium);
+    width: 90%;
+  }
+
+}

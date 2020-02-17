@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="assets/img/drop.png" />
     <title>Doe sangue! Doe vida</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style/settings/colors.css">
+    <link rel="stylesheet" href="style/settings/spacing.css">
+
+    <link rel="stylesheet" href="style/generic/reset.css">
+
+    <link rel="stylesheet" href="style/elements/base.css">
+
+    <link rel="stylesheet" href="style/components/button.css">
+
+    <link rel="stylesheet" href="style/containers/header.css">
+    <link rel="stylesheet" href="style/containers/form.css">
+    <link rel="stylesheet" href="style/containers/main.css">
+    <link rel="stylesheet" href="style/containers/donors.css">
+    <link rel="stylesheet" href="style/containers/footer.css">
+
 </head>
 <body>
+    <div>
+        
+    </div>
+
     <header>
-        <h1>DOE</h1>
+        <img 
+            src="assets/img/logo.png" 
+            alt="Imagem de DOE"
+            class="logo">
         <h2>A sua doação importa</h2>
         <p>Até 3 vidas com 1 doação</p>
         <p>Mais de 38.000 doações são necessárias todos os dias</p>
@@ -16,10 +44,9 @@
         <button>Quero ajudar</button>
     </header>
 
-    <!-- Formulário -->
-    <section class="form">
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
         <form action="/">
-            <h2>Entre na lista de doadores</h2>
             <input 
                 type="text" 
                 name="name" 
@@ -33,12 +60,12 @@
                 name="blood" 
                 placeholder="Tipo sanguíneo">
 
-            <button>Quero ajudar</button>
+            <button class="-light">Quero ajudar</button>
         </form>
     </section>
 
     <main>
-        <h2>últimos doadores</h2>
+        <h2>últimos <span>doadores</span></h2>
 
         <section class="donors">
             <div class="donor">
@@ -63,5 +90,6 @@
     <footer>Com ❤ Rocketseat</footer>
 
 
+    <script src="js/script.js"></script>
 </body>
 </html>
