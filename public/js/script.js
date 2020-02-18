@@ -9,7 +9,7 @@ buttonWantToHelp.addEventListener('click', () => {
     form.classList.toggle('hide')
 })
 
-buttonDarkmode.addEventListener('click', () => {
-    body.classList.toggle('dark-mode')
-})
+// buttonDarkmode.addEventListener('click', () => {
+//     body.classList.toggle('dark-mode')
+// })
 
