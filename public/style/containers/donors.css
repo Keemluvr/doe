@@ -26,6 +26,7 @@
 
 .donor p {
     margin-top: 24px;
+    margin-bottom: var(--spacing-medium);
     font-size: var(--font-size-small-medium);
 }
 

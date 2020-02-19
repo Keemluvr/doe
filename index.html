@@ -6,7 +6,7 @@
     <link rel="icon" type="img/png" href="assets/img/drop.png" />
     <title>Doe sangue! Doe vida</title>
 
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
@@ -46,7 +46,7 @@
 
     <section class="form hide">
         <h2>Entre na lista de doadores</h2>
-        <form action="/">
+        <form action="/" method="POST">
             <input 
                 type="text" 
                 name="name" 
@@ -68,28 +68,31 @@
         <h2>últimos <span>doadores</span></h2>
 
         <section class="donors">
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Diego Fernandes</p>
-            </div>
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Cleiton Souza</p>
-            </div>
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Keila Fernandes</p>
-            </div>
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Gilberto Medeiros</p>
-            </div>
+
+            {% for donor in donors %}
+
+                <div class="donor">
+                    <div class="blood">{{ donor.blood }}</div>
+                    <p>{{ donor.name }}</p>
+                </div>
+
+            {% endfor %}
+
         </section>
     </main>
 
     <footer>Com ❤ Rocketseat</footer>
 
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/script.js"></script>
+
+    {% if msgEmpty %}
+        <script src="js/toast-empty.js"></script>
+    {% endif %}
+
+    {% if msgErr %}
+        <script src="js/toast-err-bd.js"></script>
+    {% endif %}
+
 </body>
 </html>
