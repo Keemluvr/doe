@@ -25,4 +25,4 @@ DOE é um projeto que visa ser um banco de dados para doadores de sangue.
 
 ### :memo: Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Keemluvr/doe/blob/master/LICENSE) para mais detalhes.
