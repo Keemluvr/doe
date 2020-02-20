@@ -11,8 +11,8 @@ header .logo {
     margin-bottom: var(--spacing-medium);
 }
 
-header h1 {
-    margin-bottom: var(--spacing-medium);
+header h2 {
+    color: var(--color-dark);
 }
 
 header p {
