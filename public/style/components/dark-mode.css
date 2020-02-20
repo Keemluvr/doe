@@ -3,6 +3,13 @@
     background-color: var(--color-thirty);
 }
 
+.lamp{
+  width: 40px;
+  height: 40px;
+  margin: 15px 0 0 15px;
+  cursor: pointer;
+}
+
 .dark-mode h2,
 .dark-mode p,
 .dark-mode footer {
