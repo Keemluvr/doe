@@ -1,98 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="img/png" href="assets/img/drop.png" />
     <title>Doe sangue! Doe vida</title>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="style/settings/colors.css">
-    <link rel="stylesheet" href="style/settings/spacing.css">
+    <link rel="stylesheet" href="style/settings/colors.css" />
+    <link rel="stylesheet" href="style/settings/spacing.css" />
+    <link rel="stylesheet" href="style/settings/font.css" />
 
-    <link rel="stylesheet" href="style/generic/reset.css">
+    <link rel="stylesheet" href="style/generic/reset.css" />
 
-    <link rel="stylesheet" href="style/elements/base.css">
+    <link rel="stylesheet" href="style/elements/base.css" />
 
-    <link rel="stylesheet" href="style/components/button.css">
-    <link rel="stylesheet" href="style/components/dark-mode.css">
+    <link rel="stylesheet" href="style/components/button.css" />
+    <link rel="stylesheet" href="style/components/dark-mode.css" />
 
-    <link rel="stylesheet" href="style/containers/header.css">
-    <link rel="stylesheet" href="style/containers/form.css">
-    <link rel="stylesheet" href="style/containers/main.css">
-    <link rel="stylesheet" href="style/containers/donors.css">
-    <link rel="stylesheet" href="style/containers/footer.css">
-
-</head>
-<body>
-
-    <img title="mudar o tema" class="lamp" src="assets/img/lamp.png" alt="ativar ou desativar modo escuro">
+    <link rel="stylesheet" href="style/containers/header.css" />
+    <link rel="stylesheet" href="style/containers/form.css" />
+    <link rel="stylesheet" href="style/containers/main.css" />
+    <link rel="stylesheet" href="style/containers/donors.css" />
+    <link rel="stylesheet" href="style/containers/footer.css" />
+  </head>
+  <body>
+    <img
+      title="mudar o tema"
+      class="lamp"
+      src="assets/img/lamp.png"
+      alt="ativar ou desativar modo escuro"
+    />
 
     <header>
-        <img 
-            src="assets/img/logo.png" 
-            alt="Imagem de DOE"
-            class="logo">
-        <h2>A sua doação importa</h2>
-        <p>Até 3 vidas com 1 doação</p>
-        <p>Mais de 38.000 doações são necessárias todos os dias</p>
-        <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+      <img src="assets/img/logo.png" alt="Imagem de DOE" class="logo" />
+      <h2>A sua doação importa</h2>
+      <p>Até 3 vidas com 1 doação</p>
+      <p>Mais de 38.000 doações são necessárias todos os dias</p>
+      <p>Apenas 1,9% da população brasileira, doa sangue.</p>
 
-        <button>Quero ajudar</button>
+      <button>Quero ajudar</button>
     </header>
 
     <section class="form hide">
-        <h2>Entre na lista de doadores</h2>
-        <form action="/" method="POST">
-            <input 
-                type="text" 
-                name="name" 
-                placeholder="Nome Completo">
-            <input 
-                type="text" 
-                name="email" 
-                placeholder="Email">
-            <input 
-                type="text" 
-                name="blood" 
-                placeholder="Tipo sanguíneo">
+      <h2>Entre na lista de doadores</h2>
+      <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Nome Completo" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="blood" placeholder="Tipo sanguíneo" />
 
-            <button class="-light">Quero ajudar</button>
-        </form>
+        <button class="-light">Quero ajudar</button>
+      </form>
     </section>
 
     <main>
-        <h2>últimos <span>doadores</span></h2>
+      <h2>últimos <span>doadores</span></h2>
 
-        <section class="donors">
+      <section class="donors">
+        {% for donor in donors %}
 
-            {% for donor in donors %}
+        <a href="mailto:{{ donor.email }}" class="donor">
+          <div class="blood">{{ donor.blood }}</div>
+          <p>{{ donor.name }}</p>
+        </a>
 
-                <div class="donor">
-                    <div class="blood">{{ donor.blood }}</div>
-                    <p>{{ donor.name }}</p>
-                </div>
-
-            {% endfor %}
-
-        </section>
+        {% endfor %}
+      </section>
     </main>
 
-    <footer>Com ❤ Rocketseat</footer>
+    <footer>Com ❤ Keila Fernandes</footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="js/script.js"></script>
 
     {% if msgEmpty %}
-        <script src="js/toast-empty.js"></script>
+    <script src="js/toast-empty.js"></script>
+    {% endif %} {% if msgErr %}
+    <script src="js/toast-err-bd.js"></script>
     {% endif %}
-
-    {% if msgErr %}
-        <script src="js/toast-err-bd.js"></script>
-    {% endif %}
-
-</body>
+  </body>
 </html>

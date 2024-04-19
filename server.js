@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const server = express();
 
@@ -9,32 +10,37 @@ server.use(express.urlencoded({ extended: true }));
 
 //Configurar a conexão com o banco de dados
 const Pool = require("pg").Pool;
-const db = new Pool({
-  user: "postgres",
-  password: "postgres",
-  host: "localhost",
-  port: 5432,
-  database: "doe"
-});
-
+const dbConfig = {
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
+  idleTimeoutMillis: 0,
+  connectionTimeoutMillis: 0,
+};
+const db = new Pool(dbConfig);
 // Configurando a template engine
 const nunjuncks = require("nunjucks");
 nunjuncks.configure("./", {
   express: server,
-  noCache: true
+  noCache: true,
 });
 
 // Configurar a apresentação da página
-server.get("/", function(req, res) {
-  db.query(`SELECT * FROM "donors" ORDER BY id DESC LIMIT 4;`, function(err, result) {
-    if (err) return res.send("Erro de banco de dados.");
+server.get("/", function (req, res) {
+  db.query(`SELECT * FROM "donors" ORDER BY id DESC;`, function (err, result) {
+    console.log(err);
+    if (err) {
+      return res.send("Erro de banco de dados.");
+    }
     const donors = result.rows;
     return res.render("index.html", { donors });
   });
 });
 
 // Pegar dados do formulário
-server.post("/", function(req, res) {
+server.post("/", function (req, res) {
   const name = req.body.name;
   const email = req.body.email;
   const blood = req.body.blood;
@@ -45,11 +51,11 @@ server.post("/", function(req, res) {
   }
 
   const query = `
-        INSERT INTO "donors" ("name","email","blood") 
-        VALUES ($1, $2, $3);
-    `;
+    INSERT INTO "donors" ("name","email","blood") 
+    VALUES ($1, $2, $3);
+  `;
   const values = [name, email, blood];
-  db.query(query, values, function(err) {
+  db.query(query, values, function (err) {
     if (err) {
       const msgErr = "Erro no banco de dados.";
       return res.render("index.html", { msgErr });
@@ -59,6 +65,7 @@ server.post("/", function(req, res) {
 });
 
 // Ligar servidor e permitir acesso a porta 3000
-server.listen(3000, function() {
-  console.log("---");
+server.listen(3000, function () {
+  console.log("Servidor iniciado.");
+  console.log("Acesse http://localhost:3000");
 });

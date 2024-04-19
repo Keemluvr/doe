@@ -15,6 +15,7 @@
 .form h2 {
   text-align: right;
   font-size: 18px;
+  color: var(--color-secondary);
 }
 
 .form input,
@@ -26,6 +27,10 @@
   border: 1px solid var(--color-medium-light);
   background-color: transparent;
   outline: transparent;
+}
+
+.form input {
+  color: var(--color-secondary);
 }
 
 .form input::placeholder {
@@ -44,10 +49,10 @@
     grid-template-columns: 1fr;
     margin: 0 auto var(--spacing-medium);
     width: 90%;
+    gap: 0;
   }
 
   .form h2 {
     text-align: center;
   }
-
 }

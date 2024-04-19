@@ -1,11 +1,19 @@
 body {
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100vh;
-    font-family: var(--font-main) !important;
-    background-color: var(--color-light);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  background-color: var(--color-light);
+}
+
+h1,
+h2,
+a,
+p,
+span,
+div {
+  font-family: var(--font-main) !important;
 }
 
 footer {
-    margin-top: auto;
+  margin-top: auto;
 }
