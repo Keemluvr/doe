@@ -12,16 +12,17 @@
 <br>
 
 ### :rocket: Tecnologias usadas
+
 Este maravilindo projeto foi desenvolvido com as seguintes tecnologias:
+
 - [Node.js](https://nodejs.org/en/)
-- [Expo](https://expo.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Express](https://expressjs.com/pt-br/)
 - [Postgres](https://node-postgres.com/)
 
 ### :syringe: Projeto
 
-DOE é um projeto que visa ser um banco de dados para doadores de sangue. 
+DOE é um projeto que visa ser um banco de dados para doadores de sangue.
 
 ### :memo: Licença
 
